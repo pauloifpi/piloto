@@ -27,4 +27,5 @@ urlpatterns = [
     path('perfil/<str:usuario>/', views.perfil, name='perfil'),
     path('dia/<int:num>/', views.diasemana, name='diasemana'),
     path('produto/', views.produto, name='produto'),
+    path('produto/form/', views.form_produto, name='form_produto'),
 ]
