@@ -9,13 +9,36 @@ class ContatoForm(forms.Form):
         label='Nome Completo',
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome completo'})
     )
-    
+
+    telefone_whatsapp = forms.CharField(
+        max_length=100, 
+        label='Telefone/WhatsApp',
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '(99) 99999-9999'})
+    )
+
+    ASSUNTO_CHOICES = [
+        ('suporte técnico', 'Suporte Técnico'),
+        ('comercial', 'Comercial'),
+        ('reclamacao', 'Reclamação'),
+        ('parceria', 'Parceria'),
+        ('financeiro', 'Financeiro'),
+        ('outros assuntos', 'Outros Assuntos'),
+    ]
+    assunto_contato = forms.ChoiceField(
+        choices=ASSUNTO_CHOICES,
+        label='Assunto do Contato',
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+   
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'E-mail'})
     )
     mensagem = forms.CharField(
         widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Escreva sua mensagem', 'rows': 4})
     )
+
+
+
 
 
 
