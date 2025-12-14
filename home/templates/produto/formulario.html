@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block titulo  %} Formulário de Produtos {% endblock %}
+
+{% block titulo_page  %} Formulário de Produtos {% endblock %}
+
+
+{% block conteudo  %}  
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Renderiza cada campo do formulário com <p> tags -->
+        <button onclick="location='{% url "produto" %}'" class="btn btn-secondary mt-4" type="submit">Voltar</button>
+        <button class="btn btn-primary mt-4" type="submit">Enviar</button>
+    </form>
+
+
+{% endblock %}
