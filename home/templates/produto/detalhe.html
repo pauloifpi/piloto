@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Detalhes do Produto {% endblock %}
+{% block titulo_page %} Detalhes do Produto {% endblock %}
+
+{% block conteudo %}
+
+    <div class="card">
+        <div class="card-body">
+
+            <p><strong>ID do Produto:</strong> {{ produto.id }}</p>
+            <p><strong>Nome:</strong> {{ produto.nome }}</p>
+            <p><strong>Preço:</strong> {{ produto.preco }}</p>
+            <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+
+            <a href="{% url 'produto' %}" class="btn btn-secondary mt-4">
+                Voltar
+            </a>
+
+            <a href="{% url 'editar_produto' produto.id %}" class="btn btn-primary mt-4">
+             Editar
+            </a>
+
+
+        </div>
+    </div>
+
+{% endblock %}
+

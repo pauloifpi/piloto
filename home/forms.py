@@ -37,13 +37,6 @@ class ContatoForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Escreva sua mensagem', 'rows': 4})
     )
 
-
-
-
-
-
-
-
 class ProdutoForm(forms.Form):
     nome = forms.CharField(
         max_length=100, 
